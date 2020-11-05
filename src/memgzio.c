@@ -538,7 +538,7 @@ int ZEXPORT memgzread (file, buf, len)
    gzwrite returns the number of bytes actually written (0 in case of error).
 */
 int ZEXPORT memgzwrite (file, buf, len)
-    gzFile file;
+    voidp file;
     const voidp buf;
     unsigned len;
 {

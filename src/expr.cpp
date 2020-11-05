@@ -14,12 +14,16 @@
 
 #line 1 "expr.y"
 
-namespace std {  
+/*namespace std {  
 #include <stdio.h>
 #include <memory.h>
 #include <stdlib.h>
 #include <string.h>
-}
+}*/
+#include <cstdio>
+#include <memory.h>
+#include <cstdlib>
+#include <cstring>
 
 using namespace std;
  

@@ -55,7 +55,7 @@ extern int systemBlueShift;
 extern u16 systemColorMap16[0x10000];
 extern u32 systemColorMap32[0x10000];
 
-static int (ZEXPORT *utilGzWriteFunc)(gzFile, const voidp, unsigned int) = NULL;
+static int (ZEXPORT *utilGzWriteFunc)(voidp, const voidp, unsigned int) = NULL;
 static int (ZEXPORT *utilGzReadFunc)(gzFile, voidp, unsigned int) = NULL;
 static int (ZEXPORT *utilGzCloseFunc)(gzFile) = NULL;
 
@@ -87,7 +87,7 @@ bool utilWritePNGFile(const char *fileName, int w, int h, u8 *pix)
     return false;
   }
 
-  if(setjmp(png_ptr->jmpbuf)) {
+  if(setjmp(png_jmpbuf(png_ptr))) {
     png_destroy_write_struct(&png_ptr,NULL);
     fclose(fp);
     return false;

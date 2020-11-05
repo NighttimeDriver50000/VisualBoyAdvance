@@ -17,6 +17,6 @@
 
 gzFile ZEXPORT memgzopen(char *memory, int, const char *);
 int ZEXPORT memgzread(gzFile, voidp, unsigned);
-int ZEXPORT memgzwrite(gzFile, const voidp, unsigned);
+int ZEXPORT memgzwrite(voidp, const voidp, unsigned);
 int ZEXPORT memgzclose(gzFile);
 long ZEXPORT memtell(gzFile);
